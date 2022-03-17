@@ -1,0 +1,40 @@
+﻿<Window x:Class="School.Client.AddServiceForClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:School.Client"
+        mc:Ignorable="d"
+        Title="Записаться на услуги" Height="550" Width="800" FontSize="24" FontFamily="Segoe Print">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Label Content="Записаться на услуги" Grid.Row="0" Grid.ColumnSpan="2"
+               VerticalAlignment="Top" HorizontalAlignment="Center"
+               FontSize="32"/>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <Label Content="ФИО" HorizontalAlignment="Center"/>
+            <ComboBox ItemsSource="{Binding GetItemsName}" Height="35"/>
+            <Label Content="Наименование" HorizontalAlignment="Center"/>
+            <ComboBox ItemsSource="{Binding GetItemsServices}" Height="35"/>
+            <Label Content="Дата начала" HorizontalAlignment="Center"/>
+            <DatePicker/>
+            <Label Content="Длительность" HorizontalAlignment="Center"/>
+            <Label Content="{Binding}"/>
+        </StackPanel>
+        <Button Content="Отменить"
+                Click="Button_Close_Click"
+                Grid.Row="1" Grid.Column="0" 
+                VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+        <Button Content="Записаться"
+                Grid.Row="1" Grid.Column="1" 
+                VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+    </Grid>
+</Window>
